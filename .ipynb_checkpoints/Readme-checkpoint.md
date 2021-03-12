@@ -185,7 +185,7 @@ ____
 * **You will see the below message if the transaction was successful.**
 
 
-    ![Success](screenshots/9.PNG)
+   ![Success](screenshots/9.PNG)
 
 **CONGRATULATIONS! YOU HAVE SENT YOUR FIRST TESTNET BLOCKCHAIN TRANSACTION!!**
 
