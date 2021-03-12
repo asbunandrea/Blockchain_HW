@@ -1,0 +1,22 @@
+Blockcahin HW
+
+pin 9510
+psw 5673
+network:tommy
+
+node 5: 0x82c99D7b13Fde1bA9BC40edEbcd2F41211e4e0d9
+run: ./geth --datadir node5 --unlock "0x82c99D7b13Fde1bA9BC40edEbcd2F41211e4e0d9" --mine --rpc --allow-insecure-unlock
+enode://cf123809af495396feb46c25893283427b5da86216e89f91cb48609e00a384f5b85fa5944b1a889f9967863dfc34a155f43d014420064c33f7b3216d9bff2443@127.0.0.1:30303
+
+node 6: 0x95fb3Bd4A0352817FC2869FA1104E2B56D22b7a9
+run: ./geth --datadir node6 --unlock "0x95fb3Bd4A0352817FC2869FA1104E2B56D22b7a9" --mine --port 30304 --bootnodes "enode://6c32e61849b5f5f44b3f1c9c8c9c77e06820907ae1683ee0b8da9bf216bd3956a53817506d0e7e687e250abe9b571559652867381bee31ac369dac1327e6b8cf@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
+
+
+
+
+FAIL ATTEMPT
+node 3: 8af58cdc365d3b0b9bd6774e8e312016bb18e942
+enode://cf123809af495396feb46c25893283427b5da86216e89f91cb48609e00a384f5b85fa5944b1a889f9967863dfc34a155f43d014420064c33f7b3216d9bff2443@73.124.59.29:30303
+
+
+node 4: aaadfa5c523ff28d48eab595bc73fc96f5b57cd3

@@ -1,0 +1,34 @@
+Node 1 Address:
+0x86dE200f62bF4d1B1Cf5529315B653259B4893C6
+
+Node 2 Address:
+0x177bc87f25779c44d489a92A55ba8bb937FD708F
+
+Start Node 1
+./geth --datadir node1 --mine --minerthreads 1
+
+Node 1:
+enode://cf123809af495396feb46c25893283427b5da86216e89f91cb48609e00a384f5b85fa5944b1a889f9967863dfc34a155f43d014420064c33f7b3216d9bff2443@127.0.0.1:30303
+
+Start Node 2:
+./geth --datadir node2 --port 30304 --rpc --bootnodes "enode://<replace with node1 enode address>" --ipcdisable
+
+Node 2:
+enode://61c9ed62fbc504d9add5b40a0353ddf574a9238b5d778678c3de0ceeff9113fca0adeb4f637ce38027f9cc87bb42823ddfde245d7f0860c9c9cce43a3de1fd8e@127.0.0.1:30304
+
+
+
+If you ever encounter strange errors, or need to start over without destroying the accounts, run the following command to clear the chain data (this will reset the enode addresses as well):
+rm -Rf node1/geth node2/geth
+
+
+The --rpc flag enables us to talk to our second node, which will allow us to use MyCrypto or Metamask to transact on our chain.
+
+
+Since the first node's sync port already took up 30303, we need to change this one to 30304 using --port.
+
+
+The --bootnodes flag allows you to pass the network info needed to find other nodes in the blockchain. This will allow us to connect both of our nodes.
+
+
+In Microsoft Windows, we need to add the flag --ipcdisable due to the way Windows spawns new IPC/Unix sockets doesn't allow for having multiple sockets running from geth at once. Since we are only using RCP we can safely disable the IPC sockets.
